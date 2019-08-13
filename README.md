@@ -1,4 +1,4 @@
-**Note:** This is alpha software and not to be used in production until v1.0.0
+**Note:** This is live software and can be used in production
 
 # Order Created Webhooks of Magento 2 for fomo.com
 
