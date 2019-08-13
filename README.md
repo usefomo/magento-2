@@ -1,12 +1,12 @@
 **Note:** This is alpha software and not to be used in production until v1.0.0
 
-# Webhooks for Magento 2
+# Order Created Webhooks of Magento 2 for fomo.com
 
 ![Preview](http://prontoinfosys.com/magento1/Screenshot_1.jpg)
 
-This module provides webhooks for Magento 2 events, cpecially for fomo.com. 
+This module provides webhooks for Magento 2 events, specially for fomo.com
 
-> Better support for webhooks is on the backlog, but currently not guaranteed for Magento 2 GA.
+> Currently guaranteed for Magento 2 GA.
 
 We're hopeful the community can help push this effort forward through this module.
 
@@ -39,18 +39,8 @@ php bin/magento setup:upgrade
 ## Supported Webhooks
 
 Available now
-- Customer updated
-- Customer deleted
-- Order updated
-- Order deleted
-- Product updated
-- Product deleted
-
-TODO
-- Customer created
 - Order created
-- Product created
-- CRUD operations for other resources
+
 
 ## Roadmap and areas for discussion
 
