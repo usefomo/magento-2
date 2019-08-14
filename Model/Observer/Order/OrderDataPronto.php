@@ -46,11 +46,40 @@ class OrderDataPronto implements \Magento\Framework\Event\ObserverInterface
     {
       $order = $observer->getEvent()->getOrder();
 	  //print_r($order->getId());
+	$_item=$order->getAllItems();
+		foreach ($order->getAllItems() as $item)
+		{
+			$productpi['id'] = $item->getId();
+			$productpi['name'] = $item->getName();
+			$productpi['type'] = $item->getProductType();
+			$productpi['qty'] = $item->getQtyOrdered();
+			$productpi['price'] = $item->getPrice();
+			$productpi['url'] = $item->getPricegetProductUrl();
+			
+			$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+			$product = $objectManager->create('Magento\Catalog\Model\Product')->load($item->getId());
+			$imagewidth=200;
+			$imageheight=200;
+			$imageHelper  = $objectManager->get('\Magento\Catalog\Helper\Image');
+			$image_url = $imageHelper->init($product, 'product_page_image_small')->setImageFile($product->getFile())->resize($imagewidth, $imageheight)->getUrl();
+			
+			$productpi['image'] = $image_url;
+		}
+		
 		
 	 $body = [
             'event' => 'order/created',
             'first_name'  => $order->getCustomerFirstname(),
-			'last_name'  => $order->getCustomerLastname()
+			'last_name'  => $order->getCustomerLastname(),
+			'email'  => $order->getCustomerEmail(),
+			'city'  => $order->getShippingAddress()->getCity(),
+			'province'  => $order->getShippingAddress()->getRegionId(),
+			'country'  => $order->getShippingAddress()->getCountryId(),			
+			'subtotal'  => $order->getSubtotal(),
+			'grandtotal'  => $order->getGrandTotal(),
+			'product' => $productpi,
+			'amount_paid' => $order->getPayment()->getAmountPaid(),
+			'payment_method' => $order->getPayment()->getMethod(),
         ];
 	
 	 $webhooks = $this->_webhookFactory
@@ -79,6 +108,7 @@ class OrderDataPronto implements \Magento\Framework\Event\ObserverInterface
         $this->_curlAdapter->close();
 		
 		$this->_logger->debug("Sending webhook for event " . $bodyJson . " to " . $url);
-		
+		print_r($bodyJson);
+		exit;
     }
 }
