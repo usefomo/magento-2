@@ -44,20 +44,20 @@ Available now
 
 ## Play Loads
 
-first_name
-last_name
-email
-city
-province
-country
-subtotal
-grandtotal
-payment_method
-product["id"]
-product["price"]
-product["type"]
-product["qty"]
-product["price"]
+- first_name
+- last_name
+- email
+- city
+- province
+- country
+- subtotal
+- grandtotal
+- payment_method
+- product["id"]
+- product["price"]
+- product["type"]
+- product["qty"]
+- product["price"]
 
 
 ## Contributing
