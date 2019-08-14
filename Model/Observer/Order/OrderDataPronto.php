@@ -111,7 +111,6 @@ class OrderDataPronto implements \Magento\Framework\Event\ObserverInterface
         $this->_curlAdapter->close();
 		
 		$this->_logger->debug("Sending webhook for event " . $bodyJson . " to " . $url);
-		print_r($bodyJson);
-		exit;
+		
     }
 }
