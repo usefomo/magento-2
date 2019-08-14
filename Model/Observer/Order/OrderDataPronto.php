@@ -54,7 +54,8 @@ class OrderDataPronto implements \Magento\Framework\Event\ObserverInterface
 			$productpi['type'] = $item->getProductType();
 			$productpi['qty'] = $item->getQtyOrdered();
 			$productpi['price'] = $item->getPrice();
-			$productpi['url'] = $item->getPricegetProductUrl();
+			//$p = Mage::getModel("catalog/product")->load($item);
+			
 			
 			$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
 			$product = $objectManager->create('Magento\Catalog\Model\Product')->load($item->getId());
@@ -63,6 +64,8 @@ class OrderDataPronto implements \Magento\Framework\Event\ObserverInterface
 			$imageHelper  = $objectManager->get('\Magento\Catalog\Helper\Image');
 			$image_url = $imageHelper->init($product, 'product_page_image_small')->setImageFile($product->getFile())->resize($imagewidth, $imageheight)->getUrl();
 			
+			
+			$productpi['sku'] = $item->getSku();
 			$productpi['image'] = $image_url;
 		}
 		
