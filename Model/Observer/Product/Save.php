@@ -1,6 +1,6 @@
 <?php
 
-namespace SweetTooth\Webhook\Model\Observer\Product;
+namespace Fomo\Webhook\Model\Observer\Product;
 
 use Magento\Framework\Event\Observer;
 
@@ -35,7 +35,7 @@ class Save implements \Magento\Framework\Event\ObserverInterface
         \Psr\Log\LoggerInterface $logger,
         \Magento\Framework\HTTP\Adapter\Curl $curlAdapter,
         \Magento\Framework\Json\Helper\Data $jsonHelper,
-        \SweetTooth\Webhook\Model\WebhookFactory $webhookFactory
+        \Fomo\Webhook\Model\WebhookFactory $webhookFactory
     ) {
         $this->_logger = $logger;
         $this->_curlAdapter = $curlAdapter;

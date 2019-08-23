@@ -1,6 +1,6 @@
 <?php
 
-namespace SweetTooth\Webhook\Model\Observer;
+namespace Fomo\Webhook\Model\Observer;
 
 use Magento\Framework\Event\Observer;
 
@@ -38,7 +38,7 @@ class WebhookAbstract
         \Psr\Log\LoggerInterface $logger,
         \Magento\Framework\HTTP\Adapter\Curl $curlAdapter,
         \Magento\Framework\Json\Helper\Data $jsonHelper,
-        \SweetTooth\Webhook\Model\WebhookFactory $webhookFactory
+        \Fomo\Webhook\Model\WebhookFactory $webhookFactory
     ) {
         $this->_logger = $logger;
         $this->_curlAdapter = $curlAdapter;

@@ -1,6 +1,6 @@
 <?php
 
-namespace SweetTooth\Webhook\Setup;
+namespace Fomo\Webhook\Setup;
 
 use Magento\Framework\Setup\InstallSchemaInterface;
 use Magento\Framework\Setup\ModuleContextInterface;

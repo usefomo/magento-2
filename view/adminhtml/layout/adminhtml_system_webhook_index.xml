@@ -3,7 +3,7 @@
     <update handle="adminhtml_system_webhook_grid_block"/>
     <body>
         <referenceContainer name="content">
-            <block class="SweetTooth\Webhook\Block\System\Webhook" name="adminhtml.system.webhook.grid.container"/>
+            <block class="Fomo\Webhook\Block\System\Webhook" name="adminhtml.system.webhook.grid.container"/>
         </referenceContainer>
     </body>
 </page>

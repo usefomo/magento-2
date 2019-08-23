@@ -23,6 +23,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'SweetTooth_Webhook',
+    'Fomo_Webhook',
     __DIR__
 );

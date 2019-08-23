@@ -17,7 +17,7 @@ Install via composer
 composer require sweettooth/magento2-module-webhook
 ```
 
-Add `SweetTooth_Webhook` to your `app/etc/config.php`
+Add `Fomo_Webhook` to your `app/etc/config.php`
 ```php
 <?php
 return array (
@@ -26,7 +26,7 @@ return array (
     //
     // Bunch of other modules
     // 
-    'SweetTooth_Webhook' => 1,
+    'Fomo_Webhook' => 1,
   ),
 );
 ```
@@ -39,8 +39,7 @@ php bin/magento setup:upgrade
 ## Supported Webhooks
 
 Available now
-- Order created
-
+- Order created.
 
 ## Play Loads
 

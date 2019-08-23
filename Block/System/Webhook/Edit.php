@@ -1,6 +1,6 @@
 <?php
 
-namespace SweetTooth\Webhook\Block\System\Webhook;
+namespace Fomo\Webhook\Block\System\Webhook;
 
 /**
  * Webhook Edit Container
@@ -36,7 +36,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     protected function _construct()
     {
         $this->_objectId = 'webhook_id';
-        $this->_blockGroup = 'SweetTooth_Webhook';
+        $this->_blockGroup = 'Fomo_Webhook';
         $this->_controller = 'system_webhook';
 
         parent::_construct();
@@ -45,7 +45,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
     /**
      * Getter
      *
-     * @return \SweetTooth\Webhook\Model\Webhook
+     * @return \Fomo\Webhook\Model\Webhook
      */
     public function getWebhook()
     {
@@ -101,7 +101,7 @@ class Edit extends \Magento\Backend\Block\Widget\Form\Container
         if ($this->getWebhook()->getId()) {
             return __('Webhook "%1"', $this->escapeHtml($this->getWebhook()->getName()));
         } else {
-            return __('New Webhook');
+            return __('New Fomo Webhook');
         }
     }
 

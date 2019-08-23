@@ -5,7 +5,7 @@
             <resource id="Magento_Backend::admin">
                 <resource id="Magento_Backend::system">
                     <resource id="Magento_Backend::system_other_settings">
-                        <resource id="SweetTooth_Webhook::webhook" title="Webhooks"  sortOrder="20" />
+                        <resource id="Fomo_Webhook::webhook" title="Webhooks"  sortOrder="20" />
                     </resource>
                 </resource>
             </resource>

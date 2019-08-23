@@ -1,8 +1,8 @@
 <?php
 
-namespace SweetTooth\Webhook\Controller\Adminhtml\System\Webhook;
+namespace Fomo\Webhook\Controller\Adminhtml\System\Webhook;
 
-class NewAction extends \SweetTooth\Webhook\Controller\Adminhtml\System\Webhook
+class NewAction extends \Fomo\Webhook\Controller\Adminhtml\System\Webhook
 {
     /**
      * New Action (forward to edit action)

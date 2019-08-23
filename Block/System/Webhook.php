@@ -1,6 +1,6 @@
 <?php
 
-namespace SweetTooth\Webhook\Block\System;
+namespace Fomo\Webhook\Block\System;
 
 /**
  * Webhook Block
@@ -14,10 +14,10 @@ class Webhook extends \Magento\Backend\Block\Widget\Grid\Container
      */
     protected function _construct()
     {
-        $this->_blockGroup = 'SweetTooth_Webhook';
+        $this->_blockGroup = 'Fomo_Webhook';
         $this->_controller = 'system_webhook';
-        $this->_headerText = __('Webhooks');
+        $this->_headerText = __('Fomo Webhooks');
         parent::_construct();
-        $this->buttonList->update('add', 'label', __('Add New Webhook'));
+        $this->buttonList->update('add', 'label', __('Add New Fomo Webhook'));
     }
 }

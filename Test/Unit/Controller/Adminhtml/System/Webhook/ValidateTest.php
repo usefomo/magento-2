@@ -1,6 +1,6 @@
 <?php
 
-namespace SweetTooth\Webhook\Test\Unit\Controller\Adminhtml\System\Webhook;
+namespace Fomo\Webhook\Test\Unit\Controller\Adminhtml\System\Webhook;
 
 /**
  * TODO: Write tests

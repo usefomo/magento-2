@@ -1,6 +1,6 @@
 <?php
 
-namespace SweetTooth\Webhook\Model\Resource;
+namespace Fomo\Webhook\Model\Resource;
 
 /**
  * Custom webhook resource model
@@ -20,11 +20,11 @@ class Webhook extends \Magento\Framework\Model\ResourceModel\Db\AbstractDb
     /**
      * Load webhook by code
      *
-     * @param \SweetTooth\Webhook\Model\Webhook $object
+     * @param \Fomo\Webhook\Model\Webhook $object
      * @param string $code
      * @return $this
      */
-    public function loadByCode(\SweetTooth\Webhook\Model\Webhook $object, $code)
+    public function loadByCode(\Fomo\Webhook\Model\Webhook $object, $code)
     {
         if ($result = $this->getWebhookByCode($code, true, $object->getStoreId())) {
             $object->setData($result);

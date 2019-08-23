@@ -1,6 +1,6 @@
 <?php
 
-namespace SweetTooth\Webhook\Controller\Adminhtml\System;
+namespace Fomo\Webhook\Controller\Adminhtml\System;
 
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
@@ -14,7 +14,7 @@ use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
  */
 abstract class Webhook extends Action
 {
-     const ADMIN_RESOURCE = 'SweetTooth_Webhook::webhook';
+     const ADMIN_RESOURCE = 'Fomo_Webhook::webhook';
     /**
      * Core registry
      *
@@ -77,22 +77,22 @@ abstract class Webhook extends Action
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('SweetTooth_Webhook::system_webhook')
-            ->addBreadcrumb(__('Webhooks'), __('Webhooks'));
+        $resultPage->setActiveMenu('Fomo_Webhook::system_webhook')
+            ->addBreadcrumb(__('Fomo Webhooks'), __('Fomo Webhooks'));
         return $resultPage;
     }
 
     /**
      * Initialize Webhook object
      *
-     * @return \SweetTooth\Webhook\Model\Webhook
+     * @return \Fomo\Webhook\Model\Webhook
      */
     protected function _initWebhook()
     {
         $webhookId = $this->getRequest()->getParam('webhook_id', null);
         $storeId = (int)$this->getRequest()->getParam('store', 0);
-        /* @var $webhook \SweetTooth\Webhook\Model\Webhook */
-        $webhook = $this->_objectManager->create('SweetTooth\Webhook\Model\Webhook');
+        /* @var $webhook \Fomo\Webhook\Model\Webhook */
+        $webhook = $this->_objectManager->create('Fomo\Webhook\Model\Webhook');
         if ($webhookId) {
             $webhook->setStoreId($storeId)->load($webhookId);
         }
@@ -107,6 +107,6 @@ abstract class Webhook extends Action
      */
     protected function _isAllowed()
     {
-        return $this->_authorization->isAllowed('SweetTooth_Webhook::webhook');
+        return $this->_authorization->isAllowed('Fomo_Webhook::webhook');
     }
 }

@@ -1,13 +1,13 @@
 <?php
 
-namespace SweetTooth\Webhook\Model\Observer\Product;
+namespace Fomo\Webhook\Model\Observer\Product;
 
 use Magento\Framework\Event\Observer;
 
 /**
  * Class Customer
  */
-class Delete extends \SweetTooth\Webhook\Model\Observer\WebhookAbstract
+class Delete extends \Fomo\Webhook\Model\Observer\WebhookAbstract
 {
     protected function _getWebhookEvent()
     {

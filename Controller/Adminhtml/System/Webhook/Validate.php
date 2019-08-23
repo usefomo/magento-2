@@ -1,8 +1,8 @@
 <?php
 
-namespace SweetTooth\Webhook\Controller\Adminhtml\System\Webhook;
+namespace Fomo\Webhook\Controller\Adminhtml\System\Webhook;
 
-class Validate extends \SweetTooth\Webhook\Controller\Adminhtml\System\Webhook
+class Validate extends \Fomo\Webhook\Controller\Adminhtml\System\Webhook
 {
     /**
      * Validate Action

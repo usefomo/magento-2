@@ -1,6 +1,6 @@
 <?php
 
-namespace SweetTooth\Webhook\Test\Unit\Model;
+namespace Fomo\Webhook\Test\Unit\Model;
 
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 

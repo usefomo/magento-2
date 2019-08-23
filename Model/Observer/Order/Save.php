@@ -1,13 +1,13 @@
 <?php
 
-namespace SweetTooth\Webhook\Model\Observer\Order;
+namespace Fomo\Webhook\Model\Observer\Order;
 
 use Magento\Framework\Event\Observer;
 
 /**
  * Class Customer
  */
-class Save extends \SweetTooth\Webhook\Model\Observer\WebhookAbstract
+class Save extends \Fomo\Webhook\Model\Observer\WebhookAbstract
 {
     protected function _getWebhookEvent()
     {

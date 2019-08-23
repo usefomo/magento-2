@@ -1,9 +1,9 @@
 <?php
 
-namespace SweetTooth\Webhook\Controller\Adminhtml\System\Webhook;
+namespace Fomo\Webhook\Controller\Adminhtml\System\Webhook;
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
-class Index extends \SweetTooth\Webhook\Controller\Adminhtml\System\Webhook
+class Index extends \Fomo\Webhook\Controller\Adminhtml\System\Webhook
 {
     /**
      * Index Action
@@ -13,7 +13,7 @@ class Index extends \SweetTooth\Webhook\Controller\Adminhtml\System\Webhook
     public function execute()
     {
         $resultPage = $this->createPage();
-        $resultPage->getConfig()->getTitle()->prepend(__('Webhooks'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Fomo Webhooks'));
         return $resultPage;
     }
 }

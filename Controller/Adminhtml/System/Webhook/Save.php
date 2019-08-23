@@ -1,9 +1,9 @@
 <?php
 
-namespace SweetTooth\Webhook\Controller\Adminhtml\System\Webhook;
+namespace Fomo\Webhook\Controller\Adminhtml\System\Webhook;
 use Magento\Framework\Model\ResourceModel\Db\Collection\AbstractCollection;
 
-class Save extends \SweetTooth\Webhook\Controller\Adminhtml\System\Webhook
+class Save extends \Fomo\Webhook\Controller\Adminhtml\System\Webhook
 {
     /**
      * Save Action

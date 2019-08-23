@@ -1,6 +1,6 @@
 <?php
 
-namespace SweetTooth\Webhook\Model\Resource\Webhook;
+namespace Fomo\Webhook\Model\Resource\Webhook;
 
 /**
  * Custom webhook collection
@@ -22,7 +22,7 @@ class Collection extends \Magento\Framework\Model\ResourceModel\Db\Collection\Ab
     protected function _construct()
     {
         parent::_construct();
-        $this->_init('SweetTooth\Webhook\Model\Webhook', 'SweetTooth\Webhook\Model\Resource\Webhook');
+        $this->_init('Fomo\Webhook\Model\Webhook', 'Fomo\Webhook\Model\Resource\Webhook');
     }
 
     /**

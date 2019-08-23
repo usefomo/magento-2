@@ -3,14 +3,14 @@
 /**
  * Webhook Edit Form
  */
-namespace SweetTooth\Webhook\Block\System\Webhook\Edit;
+namespace Fomo\Webhook\Block\System\Webhook\Edit;
 
 class Form extends \Magento\Backend\Block\Widget\Form\Generic
 {
     /**
      * Getter
      *
-     * @return \SweetTooth\Webhook\Model\Webhook
+     * @return \Fomo\Webhook\Model\Webhook
      */
     public function getWebhook()
     {
@@ -20,7 +20,7 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic
     /**
      * Prepare form before rendering HTML
      *
-     * @return \SweetTooth\Webhook\Block\System\Webhook\Edit\Form
+     * @return \Fomo\Webhook\Block\System\Webhook\Edit\Form
      */
     protected function _prepareForm()
     {

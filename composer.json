@@ -15,7 +15,7 @@
         "map": [
             [
                 "*",
-                "SweetTooth/Webhook"
+                "Fomo/Webhook"
             ]
         ]
     }

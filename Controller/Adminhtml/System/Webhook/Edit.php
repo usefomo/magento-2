@@ -1,8 +1,8 @@
 <?php
 
-namespace SweetTooth\Webhook\Controller\Adminhtml\System\Webhook;
+namespace Fomo\Webhook\Controller\Adminhtml\System\Webhook;
 
-class Edit extends \SweetTooth\Webhook\Controller\Adminhtml\System\Webhook
+class Edit extends \Fomo\Webhook\Controller\Adminhtml\System\Webhook
 {
     /**
      * Edit Action
@@ -14,16 +14,16 @@ class Edit extends \SweetTooth\Webhook\Controller\Adminhtml\System\Webhook
         $webhook = $this->_initWebhook();
 
         $resultPage = $this->createPage();
-        $resultPage->getConfig()->getTitle()->prepend(__('Webhooks'));
+        $resultPage->getConfig()->getTitle()->prepend(__('Fomo Webhooks'));
         $resultPage->getConfig()->getTitle()->prepend(
-            $webhook->getId() ? $webhook->getCode() : __('New Webhook')
+            $webhook->getId() ? $webhook->getCode() : __('New Fomo Webhook')
         );
-        $resultPage->addContent($resultPage->getLayout()->createBlock('SweetTooth\Webhook\Block\System\Webhook\Edit'))
+        $resultPage->addContent($resultPage->getLayout()->createBlock('Fomo\Webhook\Block\System\Webhook\Edit'))
             ->addJs(
                 $resultPage->getLayout()->createBlock(
                     'Magento\Framework\View\Element\Template',
                     '',
-                    ['data' => ['template' => 'SweetTooth_Webhook::system/webhook/js.phtml']]
+                    ['data' => ['template' => 'Fomo_Webhook::system/webhook/js.phtml']]
                 )
             );
         return $resultPage;
