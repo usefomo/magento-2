@@ -2,7 +2,7 @@
 
 # Order Created Webhooks of Magento 2 for fomo.com
 
-![Preview](http://prontoinfosys.com/magento1/Screenshot_1.jpg)
+![Preview](http://prontoinfosys.com/Screenshot_4.jpg)
 
 This module provides webhooks for Magento 2 events, specially for fomo.com
 
@@ -12,9 +12,9 @@ We're hopeful the community can help push this effort forward through this modul
 
 ## Getting Started
 
-Install via composer
+Upload to folder
 ```
-composer require sweettooth/magento2-module-webhook
+app/code/Fomo/Webhook
 ```
 
 Add `Fomo_Webhook` to your `app/etc/config.php`
