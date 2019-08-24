@@ -10,7 +10,7 @@ We're hopeful the community can help push this effort forward through this modul
 
 ## Getting Started
 
-Upload to folder
+Upload to folder (you may need to create subfolders)
 ```
 app/code/Fomo/Webhook
 ```
