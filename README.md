@@ -1,5 +1,3 @@
-**Note:** This is live software and can be used in production
-
 # Order Created Webhooks of Magento 2 for fomo.com
 
 ![Preview](http://prontoinfosys.com/Screenshot_4.jpg)
