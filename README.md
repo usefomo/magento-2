@@ -1,6 +1,6 @@
 # Order Created Webhooks of Magento 2 for fomo.com
 
-![Preview](http://prontoinfosys.com/Screenshot_4.jpg)
+![Preview](https://github.com/usefomo/magento-2/blob/master/.github/admin.png?raw=true)
 
 This module provides webhooks for Magento 2 events, specially for fomo.com
 
