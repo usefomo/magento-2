@@ -1,12 +1,10 @@
-# Order Created Webhooks of Magento 2 for fomo.com
+# Magento 2 Webhooks Module for fomo.com
 
 ![Preview](https://github.com/usefomo/magento-2/blob/master/.github/admin.png?raw=true)
 
-This module provides webhooks for Magento 2 events, specially for fomo.com
+This plugin provides webhooks for Magento 2 events, to be consumed by fomo.com.
 
-> Currently guaranteed for Magento 2 GA.
-
-We're hopeful the community can help push this effort forward through this module.
+> Tested and working on v2.1, v2.2, and v2.3.
 
 ## Getting Started
 
@@ -37,9 +35,9 @@ php bin/magento setup:upgrade
 ## Supported Webhooks
 
 Available now
-- Order created.
+- Order created
 
-## Play Loads
+## Payload
 
 - first_name
 - last_name
