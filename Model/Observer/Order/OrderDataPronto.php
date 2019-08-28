@@ -44,12 +44,13 @@ class OrderDataPronto implements \Magento\Framework\Event\ObserverInterface
    
 	public function execute(\Magento\Framework\Event\Observer $observer)
     {
-      $order = $observer->getEvent()->getOrder();
+		$order = $observer->getEvent()->getOrder();
 	  //print_r($order->getId());
-	$_item=$order->getAllItems();
+	//$_item=$order->getAllItems(); 
+		//print_r($_item);  
 		foreach ($order->getAllItems() as $item)
 		{
-			$productpi['id'] = $item->getId();
+			$productpi['id'] = $item->getproduct_id();
 			$productpi['name'] = $item->getName();
 			$productpi['type'] = $item->getProductType();
 			$productpi['qty'] = $item->getQtyOrdered();
@@ -57,26 +58,50 @@ class OrderDataPronto implements \Magento\Framework\Event\ObserverInterface
 			//$p = Mage::getModel("catalog/product")->load($item);
 			
 			
-			$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-			$product = $objectManager->create('Magento\Catalog\Model\Product')->load($item->getId());
+			$objectManager = \Magento\Framework\App\ObjectManager::getInstance(); 
+			$product = $objectManager->create('Magento\Catalog\Model\Product')->load($item->getproduct_id());
 			$imagewidth=200;
 			$imageheight=200;
 			$imageHelper  = $objectManager->get('\Magento\Catalog\Helper\Image');
 			$image_url = $imageHelper->init($product, 'product_page_image_small')->setImageFile($product->getFile())->resize($imagewidth, $imageheight)->getUrl();
 			
 			
-			$productpi['sku'] = $item->getSku();
-			$productpi['image'] = $image_url;
+$prdoduct = $objectManager->get('Magento\Catalog\Model\Product')->load($item->getproduct_id());
+$store = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore();
+ 
+$productImageUrl = $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $prdoduct->getImage();
+$productUrl  = $product->getProductUrl();
+			
+			
+			 $productCollection = $objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
+
+	$collection = $productCollection->create()
+			->addAttributeToSelect('*')
+			->setPageSize(6) 
+				->load();
+
+	foreach ($collection as $product){ 
+		if($item->getproduct_id() == $product->getId()){
+			$abcurl = $product->getProductUrl();
+		
 		}
 		
+		} 
+			
+			$productpi['sku'] = $item->getSku();
+			$productpi['image'] = $productImageUrl;
+			$productpi['product_url'] = $abcurl;
+		}
+		$region = $objectManager->create('Magento\Directory\Model\Region')->load($order->getShippingAddress()->getRegionId());
 		
 	 $body = [
             'event' => 'order/created',
-            'first_name'  => $order->getCustomerFirstname(),
+            'order_id' => $order->getId(),
+			'first_name'  => $order->getCustomerFirstname(),
 			'last_name'  => $order->getCustomerLastname(),
 			'email'  => $order->getCustomerEmail(),
-			'city'  => $order->getShippingAddress()->getCity(),
-			'province'  => $order->getShippingAddress()->getRegionId(),
+			'city'  => $order->getShippingAddress()->getCity(),			
+			'province' => $region->getName(),
 			'country'  => $order->getShippingAddress()->getCountryId(),			
 			'subtotal'  => $order->getSubtotal(),
 			'grandtotal'  => $order->getGrandTotal(),
@@ -95,7 +120,6 @@ class OrderDataPronto implements \Magento\Framework\Event\ObserverInterface
             $this->_sendWebhookdata($webhook->getUrl(), $body);
 			//echo $webhook->getUrl();
         }
-	 
     // print_r($order->getId());
 		//exit;
     }
