@@ -96,7 +96,7 @@ $productUrl  = $product->getProductUrl();
 		
 	 $body = [
             'event' => 'order/created',
-            'order_id' => $order->getId(),
+            'order_id' => $order->getIncrementId(),
 			'first_name'  => $order->getCustomerFirstname(),
 			'last_name'  => $order->getCustomerLastname(),
 			'email'  => $order->getCustomerEmail(),
