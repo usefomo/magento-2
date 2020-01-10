@@ -6,9 +6,6 @@
     <event name="customer_delete_after">
         <observer name="customer_delete_after_sweettooth_webhook_observer" instance="Fomo\Webhook\Model\Observer\Customer\Delete" />
     </event>
-    <event name="sales_order_save_after">
-        <observer name="sales_order_data_after_sweettooth_webhook_observer" instance="Fomo\Webhook\Model\Observer\Order\OrderDataPronto" />
-    </event>
     <event name="catalog_product_delete_after">
         <observer name="product_delete_after_sweettooth_webhook_observer" instance="Fomo\Webhook\Model\Observer\Product\Delete" />
     </event>
@@ -18,5 +15,4 @@
     <event name="sales_order_delete_after">
         <observer name="sales_order_delete_after_sweettooth_webhook_observer" instance="Fomo\Webhook\Model\Observer\Order\Delete" />
     </event>
-
 </config>
