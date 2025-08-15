@@ -65,29 +65,18 @@ class OrderDataPronto implements \Magento\Framework\Event\ObserverInterface
 			$imageHelper  = $objectManager->get('\Magento\Catalog\Helper\Image');
 			$image_url = $imageHelper->init($product, 'product_page_image_small')->setImageFile($product->getFile())->resize($imagewidth, $imageheight)->getUrl();
 			
+			$store = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore();
 			
-$prdoduct = $objectManager->get('Magento\Catalog\Model\Product')->load($item->getproduct_id());
-$store = $objectManager->get('Magento\Store\Model\StoreManagerInterface')->getStore();
- 
-$productImageUrl = $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $prdoduct->getImage();
-$productUrl  = $product->getProductUrl();
-			
-			
-			 $productCollection = $objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
+			$productImageUrl = $store->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA) . 'catalog/product' . $product->getImage();
+			$productUrl  = $product->getProductUrl();
+			$productCollection = $objectManager->create('Magento\Catalog\Model\ResourceModel\Product\CollectionFactory');
 
-	$collection = $productCollection->create()
-			->addAttributeToSelect('*')
-			->setPageSize(6) 
-				->load();
+			$collection = $productCollection->create()
+					->addAttributeToSelect('*')
+					->setPageSize(6) 
+						->load();
 
-	foreach ($collection as $product){ 
-		if($item->getproduct_id() == $product->getId()){
 			$abcurl = $product->getProductUrl();
-		
-		}
-		
-		} 
-			
 			$productpi['sku'] = $item->getSku();
 			$productpi['image'] = $productImageUrl;
 			$productpi['product_url'] = $abcurl;
